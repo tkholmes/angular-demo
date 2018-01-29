@@ -1,0 +1,24 @@
+<div>
+  <mat-table #table [dataSource]="users">
+    <ng-container matColumnDef="userSymbol">
+      <mat-header-cell *matHeaderCellDef>Symbol</mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <span [class]="fa + user.symbol" aria-hidden="true"></span>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="userName">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="userSpeed">
+      <mat-header-cell *matHeaderCellDef>Speed</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{user.speed}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="userDirection">
+      <mat-header-cell *matHeaderCellDef>Direction</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{user.direction}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="['userSymbol', 'userName','userSpeed','userDirection']"></mat-header-row>
+    <mat-row *matRowDef="let users; columns: ['userSymbol', 'userName','userSpeed','userDirection']"></mat-row>
+  </mat-table>
+</div>
