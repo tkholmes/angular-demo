@@ -7,9 +7,9 @@
 
   <div>
     <mat-form-field class="add-user-full-width">
-      <mat-select placeholder="Symbol" formControlName="symbol">
-        <mat-option *ngFor="let x of symbols" [value]="x">
-          <span [class]="x"></span>
+      <mat-select placeholder="Symbol" formControlName="symbol" value="def">
+        <mat-option *ngFor="let sym of symbols" value="abc">
+          <span [class]="sym"></span>
         </mat-option>
       </mat-select>
     </mat-form-field>

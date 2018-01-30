@@ -18,7 +18,13 @@
       <mat-header-cell *matHeaderCellDef>Direction</mat-header-cell>
       <mat-cell *matCellDef="let user">{{user.direction}}</mat-cell>
     </ng-container>
-    <mat-header-row *matHeaderRowDef="['userSymbol', 'userName','userSpeed','userDirection']"></mat-header-row>
-    <mat-row *matRowDef="let users; columns: ['userSymbol', 'userName','userSpeed','userDirection']"></mat-row>
+    <ng-container matColumnDef="userIsAwesome">
+      <mat-header-cell *matHeaderCellDef>Awesome?</mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <mat-checkbox [checked]="user.isAwesome" disabled></mat-checkbox>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="['userSymbol', 'userName','userSpeed','userDirection','userIsAwesome']"></mat-header-row>
+    <mat-row *matRowDef="let users; columns: ['userSymbol', 'userName','userSpeed','userDirection','userIsAwesome']"></mat-row>
   </mat-table>
 </div>

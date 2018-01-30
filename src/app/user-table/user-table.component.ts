@@ -13,7 +13,7 @@ import { Subject } from 'rxjs/Subject';
 })
 export class UserTableComponent implements OnInit, OnDestroy {
 
-  destroyed$: Subject<boolean> = new Subject();
+  _destroyed$: Subject<boolean> = new Subject();
 
   users: MatTableDataSource<User>;
 
@@ -23,13 +23,13 @@ export class UserTableComponent implements OnInit, OnDestroy {
     this.users = new MatTableDataSource();
 
     this._userService.users
-      .takeUntil(this.destroyed$)
+      .takeUntil(this._destroyed$)
       .subscribe((users) => {
         this.users.data = users;
       });
   }
 
   ngOnDestroy() {
-    this.destroyed$.next(true);
+    this._destroyed$.next(true);
   }
 }
