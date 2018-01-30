@@ -1,0 +1,32 @@
+<form class="add-user-form" [formGroup]="newUser">
+  <div>
+    <mat-form-field class="add-user-full-width">
+      <input matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="add-user-full-width">
+      <mat-select placeholder="Symbol" formControlName="symbol">
+        <mat-option *ngFor="let x of symbols" [value]="x">
+          <span [class]="x"></span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="add-user-half-width">
+      <input matInput placeholder="Speed" value="0" formControlName="speed" />
+    </mat-form-field>
+    <mat-form-field class="add-user-half-width">
+      <input matInput placeholder="Direction" formControlName="direction" />
+    </mat-form-field>
+  </div>
+
+  <div class="add-user-button">
+    <button mat-button (click)="addUser()">Add</button>
+  </div>
+</form>
+
+

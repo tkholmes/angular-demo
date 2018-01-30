@@ -4,7 +4,7 @@ import { User } from '../data-model';
 import { UserService } from '../user.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/takeUntil';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-user-table',
@@ -13,7 +13,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 })
 export class UserTableComponent implements OnInit, OnDestroy {
 
-  destroyed$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  destroyed$: Subject<boolean> = new Subject();
 
   users: MatTableDataSource<User>;
 

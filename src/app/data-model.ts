@@ -4,3 +4,4 @@ export class User {
   speed: number = 0;
   direction: string = '';
 }
+

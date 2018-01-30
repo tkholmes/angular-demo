@@ -3,7 +3,7 @@
     <ng-container matColumnDef="userSymbol">
       <mat-header-cell *matHeaderCellDef>Symbol</mat-header-cell>
       <mat-cell *matCellDef="let user">
-        <span [class]="fa + user.symbol" aria-hidden="true"></span>
+        <span [class]="user.symbol" aria-hidden="true"></span>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="userName">
