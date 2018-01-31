@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { AddUserComponent } from '../add-user/add-user.component';
+import { UserTableComponent } from '../user-table/user-table.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,7 +10,11 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [
+        DashboardComponent,
+        AddUserComponent,
+        UserTableComponent
+      ]
     })
     .compileComponents();
   }));
