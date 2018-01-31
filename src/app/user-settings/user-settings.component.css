@@ -1,0 +1,10 @@
+.container {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: [labels] 100px [values] 200px;
+  grid-row-gap: 7px;
+  border: dotted;
+  border-width: 1px;
+  width: 200px;
+  margin-left: 18px;
+}

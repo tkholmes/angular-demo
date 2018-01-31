@@ -1,0 +1,14 @@
+/*.dashboard-layout {
+  display: grid;
+  grid:
+    [row1-start] "table" 100% [row1-end]
+    "add-users";
+}
+
+.table {
+  grid-area: table;
+}
+
+.add-users {
+  grid-area: add-users;
+}*/

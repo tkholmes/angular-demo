@@ -1,5 +1,5 @@
 export class User {
-  id: number = 0;
+  id: number;
   name: string = '';
   symbol: string = '';
   speed: number = 0;

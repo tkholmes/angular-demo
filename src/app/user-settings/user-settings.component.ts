@@ -24,7 +24,8 @@ export class UserSettingsComponent implements OnInit {
         this._userId = +params.get("userId");
         return this._userService.users.switchMap((users: User[]) => Observable.of(users.find(user => user.id === this._userId)))
       })
-      .subscribe(user => this.user = user);
+      .subscribe(user =>
+        this.user = user);
 
   }
 

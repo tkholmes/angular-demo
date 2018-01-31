@@ -1,1 +1,29 @@
-<mat-checkbox [checked]="user.isAwesome" (change)="valueChanged($event)">User is awesome</mat-checkbox>
+<div class="container">
+  <div>
+    Name:
+  </div>
+  <div>
+    {{user.name}}
+  </div>
+  <div>
+    Symbol:
+  </div>
+  <div>
+    <span [class]="user.symbol"></span>
+  </div>
+  <div >
+    Speed:
+  </div>
+  <div>
+    {{user.speed}}
+  </div>
+  <div>
+    Direction:
+  </div>
+  <div>
+    {{user.direction}}
+  </div>
+  <div>
+    <mat-checkbox [checked]="user.isAwesome" (change)="valueChanged($event)">User is awesome</mat-checkbox>
+  </div>
+</div>

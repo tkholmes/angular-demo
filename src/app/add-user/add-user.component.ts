@@ -12,6 +12,7 @@ import { Subject } from 'rxjs/Subject';
 export class AddUserComponent implements OnInit, OnDestroy {
 
   _destroyed$: Subject<boolean> = new Subject();
+  _newUserId: number;
 
   symbols = [
     "fa fa-ravelry",
@@ -36,13 +37,16 @@ export class AddUserComponent implements OnInit, OnDestroy {
     this._userService.users
       .takeUntil(this._destroyed$)
       .subscribe(users => {
-        this.newUser.value.id = users.reduce((prev, current) => prev > current.id ? prev : current.id, 0) + 1;
+        this._newUserId = users.reduce((prev, current) => prev > current.id ? prev : current.id, 0) + 1;
       });
   }
 
   addUser() {
-    this._userService.addUser(this.newUser.value);
+    var user: User = this.newUser.value;
     this.newUser.reset();
+
+    user.id = this._newUserId;
+    this._userService.addUser(user);
   }
 
   ngOnDestroy() {
