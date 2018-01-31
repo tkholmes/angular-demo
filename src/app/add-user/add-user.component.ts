@@ -7,8 +7,7 @@ import { Subject } from 'rxjs/Subject';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css'],
-  providers: [UserService]
+  styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit, OnDestroy {
 

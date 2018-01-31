@@ -9,8 +9,7 @@ import { Subject } from 'rxjs/Subject';
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.css'],
-  providers: [UserService]
+  styleUrls: ['./user-table.component.css']
 })
 export class UserTableComponent implements OnInit, OnDestroy {
 
